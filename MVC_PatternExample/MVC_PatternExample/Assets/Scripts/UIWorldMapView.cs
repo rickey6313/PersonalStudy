@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class UIWorldMapView : MonoBehaviour
+public class UIWorldMapView : BaseOutGameUIView
 {
     UIWorldMapController _controller;
     public void SetController(UIWorldMapController controller)
