@@ -10,7 +10,7 @@ public class BaseUIController
     public virtual void Init() { }
     public virtual void Activate() { }
     public virtual void Deactivate() { }
-
+    
     public void SetAction(Action readyToAction, Action transitionEnd)
     {
         _readyToAction = readyToAction;

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,28 +14,28 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Canvas _rootCanvas1;
 
-    public static UIManager instance;
+    public static UIManager Instance;
 
     private BaseUIController _curController;
     private Stack<BaseUIController> _uiControllerStack = new Stack<BaseUIController>();
-    private Dictionary<UIType, BaseUIController> _uiControllerDict = new Dictionary<UIType, BaseUIController>();
-    private Dictionary<UIType, string> _uiPrefabsNameDict = new Dictionary<UIType, string>()
+    private Dictionary<ControllerType, BaseUIController> _uiControllerDict = new Dictionary<ControllerType, BaseUIController>();
+    private Dictionary<ControllerType, string> _uiPrefabsNameDict = new Dictionary<ControllerType, string>()
     {
-        {UIType.Lobby, "Lobby" },
-        {UIType.WorldMap, "WorldMap" } 
+        {ControllerType.Lobby, "Lobby" },
+        {ControllerType.WorldMap, "WorldMap" } 
     
     };
 
     private void Awake()
     {
-        if(instance == null)
+        if(Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
         DontDestroyOnLoad(this);
     }
 
-    public BaseUIController GetController(UIType type)
+    public BaseUIController GetController(ControllerType type)
     {
         if (_uiControllerDict.ContainsKey(type))
             return _uiControllerDict[type];
@@ -42,7 +43,7 @@ public class UIManager : MonoBehaviour
             return null;
     }
 
-    public T CreatePrefabs<T>(UIType type, CameraDepth depth = CameraDepth.CameraDeth1) where T : BaseOutGameUIView
+    public T CreatePrefabs<T>(ControllerType type, CameraDepth depth = CameraDepth.CameraDeth1) where T : BaseOutGameUIView
     {
         var root = GetCameraDepth(depth);
         var loaded = Resources.Load<T>($"Prefabs/{_uiPrefabsNameDict[type]}");
@@ -65,26 +66,26 @@ public class UIManager : MonoBehaviour
         
     }
 
-    public T CreateController<T>(UIType type) where T : BaseUIController
+    public T CreateController<T>(ControllerType type) where T : BaseUIController
     {
         if (_uiControllerDict.ContainsKey(type))
             return _uiControllerDict[type] as T;
 
         switch (type)
         {
-            case UIType.Lobby:
+            case ControllerType.Lobby:
                 var lobby = new UILobbyController();
                 _uiControllerDict[type] = lobby as T;
                 return lobby as T;
-            case UIType.WorldMap:
+            case ControllerType.WorldMap:
                 var worldMap = new UIWorldMapController();
                 _uiControllerDict[type] = worldMap as T;
                 return worldMap as T;
-            case UIType.Shop:
+            case ControllerType.Shop:
                 var shop = new UIWorldMapController();
                 _uiControllerDict[type] = shop as T;
                 return shop as T;
-            case UIType.Type3:
+            case ControllerType.Type3:
                 break;
         }
         return null;
@@ -106,7 +107,17 @@ public class UIManager : MonoBehaviour
         _uiControllerStack.Push(ctrl);
     }
 
-    public void ActivateController(UIType type, bool isPush = false)
+    public void TransitionOn(TransitionType transitionType, Action callback)
+    {
+        UITransition.Instance.TransitionOn(transitionType, callback);
+    }
+
+    public void TransitionOff(Action callback, Action endCallback)
+    {
+        UITransition.Instance.TransitionOff(callback, endCallback);
+    }
+
+    public void ActivateController(ControllerType type, bool isPush = false)
     {
         if(_curController != null)
         {
