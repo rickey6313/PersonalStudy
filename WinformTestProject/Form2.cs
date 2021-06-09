@@ -77,5 +77,25 @@ namespace WinformTestProject
             textBox4.Text = "해제";
             MessageBox.Show("서버 연결 해제");
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SqlCommand sqlCommand = new SqlCommand();
+            string sqlStr = $"Select * from UserInfo";
+            sqlCommand.Connection = conn;
+            sqlCommand.CommandText = sqlStr;
+            sqlCommand.CommandType = CommandType.Text;
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+            int i = 0;
+            while(reader.Read())
+            {
+                MessageBox.Show(reader[i].ToString());
+                
+            }
+            //Console.WriteLine($"UserName : {reader["UserName"]} / Password : {reader["Password"]}");
+            
+            
+
+        }
     }
 }
