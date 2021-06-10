@@ -50,10 +50,10 @@ namespace WinformTestProject
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("종료하시겠습니까?", "종료", MessageBoxButtons.YesNo) == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
+            //if (MessageBox.Show("종료하시겠습니까?", "종료", MessageBoxButtons.YesNo) == DialogResult.No)
+            //{
+            //    e.Cancel = true;
+            //}
         }
 
         private void 종료ToolStripMenuItem_Click(object sender, EventArgs e)

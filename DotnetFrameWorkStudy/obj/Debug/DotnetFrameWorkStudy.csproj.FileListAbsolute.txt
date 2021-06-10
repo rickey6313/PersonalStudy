@@ -5,3 +5,10 @@ D:\WorkSpace\CSharp\PersonalStudy\DotnetFrameWorkStudy\obj\Debug\DotnetFrameWork
 D:\WorkSpace\CSharp\PersonalStudy\DotnetFrameWorkStudy\obj\Debug\DotnetFrameWorkStudy.csproj.CoreCompileInputs.cache
 D:\WorkSpace\CSharp\PersonalStudy\DotnetFrameWorkStudy\obj\Debug\DotnetFrameWorkStudy.exe
 D:\WorkSpace\CSharp\PersonalStudy\DotnetFrameWorkStudy\obj\Debug\DotnetFrameWorkStudy.pdb
+E:\WorkSpace\PersonalStudy\DotnetFrameWorkStudy\bin\Debug\DotnetFrameWorkStudy.exe.config
+E:\WorkSpace\PersonalStudy\DotnetFrameWorkStudy\bin\Debug\DotnetFrameWorkStudy.exe
+E:\WorkSpace\PersonalStudy\DotnetFrameWorkStudy\bin\Debug\DotnetFrameWorkStudy.pdb
+E:\WorkSpace\PersonalStudy\DotnetFrameWorkStudy\obj\Debug\DotnetFrameWorkStudy.csprojAssemblyReference.cache
+E:\WorkSpace\PersonalStudy\DotnetFrameWorkStudy\obj\Debug\DotnetFrameWorkStudy.csproj.CoreCompileInputs.cache
+E:\WorkSpace\PersonalStudy\DotnetFrameWorkStudy\obj\Debug\DotnetFrameWorkStudy.exe
+E:\WorkSpace\PersonalStudy\DotnetFrameWorkStudy\obj\Debug\DotnetFrameWorkStudy.pdb

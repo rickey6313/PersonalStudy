@@ -9,3 +9,14 @@ D:\WorkSpace\CSharp\PersonalStudy\WinformTestProject\obj\Debug\WinformTestProjec
 D:\WorkSpace\CSharp\PersonalStudy\WinformTestProject\obj\Debug\WinformTestProject.exe
 D:\WorkSpace\CSharp\PersonalStudy\WinformTestProject\obj\Debug\WinformTestProject.pdb
 D:\WorkSpace\CSharp\PersonalStudy\WinformTestProject\obj\Debug\WinformTestProject.Form2.resources
+E:\WorkSpace\PersonalStudy\WinformTestProject\bin\Debug\WinformTestProject.exe.config
+E:\WorkSpace\PersonalStudy\WinformTestProject\bin\Debug\WinformTestProject.exe
+E:\WorkSpace\PersonalStudy\WinformTestProject\bin\Debug\WinformTestProject.pdb
+E:\WorkSpace\PersonalStudy\WinformTestProject\obj\Debug\WinformTestProject.csprojAssemblyReference.cache
+E:\WorkSpace\PersonalStudy\WinformTestProject\obj\Debug\WinformTestProject.Form1.resources
+E:\WorkSpace\PersonalStudy\WinformTestProject\obj\Debug\WinformTestProject.Form2.resources
+E:\WorkSpace\PersonalStudy\WinformTestProject\obj\Debug\WinformTestProject.Properties.Resources.resources
+E:\WorkSpace\PersonalStudy\WinformTestProject\obj\Debug\WinformTestProject.csproj.GenerateResource.cache
+E:\WorkSpace\PersonalStudy\WinformTestProject\obj\Debug\WinformTestProject.csproj.CoreCompileInputs.cache
+E:\WorkSpace\PersonalStudy\WinformTestProject\obj\Debug\WinformTestProject.exe
+E:\WorkSpace\PersonalStudy\WinformTestProject\obj\Debug\WinformTestProject.pdb

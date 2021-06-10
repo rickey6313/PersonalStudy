@@ -1,0 +1,10 @@
+E:\WorkSpace\PersonalStudy\NonConnectionDatabase\bin\Debug\NonConnectionDatabase.exe.config
+E:\WorkSpace\PersonalStudy\NonConnectionDatabase\bin\Debug\NonConnectionDatabase.exe
+E:\WorkSpace\PersonalStudy\NonConnectionDatabase\bin\Debug\NonConnectionDatabase.pdb
+E:\WorkSpace\PersonalStudy\NonConnectionDatabase\obj\Debug\NonConnectionDatabase.csprojAssemblyReference.cache
+E:\WorkSpace\PersonalStudy\NonConnectionDatabase\obj\Debug\NonConnectionDatabase.Form1.resources
+E:\WorkSpace\PersonalStudy\NonConnectionDatabase\obj\Debug\NonConnectionDatabase.Properties.Resources.resources
+E:\WorkSpace\PersonalStudy\NonConnectionDatabase\obj\Debug\NonConnectionDatabase.csproj.GenerateResource.cache
+E:\WorkSpace\PersonalStudy\NonConnectionDatabase\obj\Debug\NonConnectionDatabase.csproj.CoreCompileInputs.cache
+E:\WorkSpace\PersonalStudy\NonConnectionDatabase\obj\Debug\NonConnectionDatabase.exe
+E:\WorkSpace\PersonalStudy\NonConnectionDatabase\obj\Debug\NonConnectionDatabase.pdb

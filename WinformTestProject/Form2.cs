@@ -81,21 +81,19 @@ namespace WinformTestProject
         private void button5_Click(object sender, EventArgs e)
         {
             SqlCommand sqlCommand = new SqlCommand();
-            string sqlStr = $"Select * from UserInfo";
+            string sqlStr = $"Select * from tblStudent";
             sqlCommand.Connection = conn;
             sqlCommand.CommandText = sqlStr;
-            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandType = CommandType.Text;            
             SqlDataReader reader = sqlCommand.ExecuteReader();
-            int i = 0;
+
             while(reader.Read())
             {
-                MessageBox.Show(reader[i].ToString());
+                MessageBox.Show($"Name : {reader["Name"]} / Age : {reader[1]} / Male : {reader["Male"]}");
                 
             }
-            //Console.WriteLine($"UserName : {reader["UserName"]} / Password : {reader["Password"]}");
-            
-            
-
+            reader.Close();
+            conn.Close();
         }
     }
 }
