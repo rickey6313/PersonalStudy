@@ -14,6 +14,8 @@ namespace ERP_Portfolio
         [STAThread]
         static void Main()
         {
+            SqlManager.Instance.Init();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
