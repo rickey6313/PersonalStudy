@@ -14,7 +14,7 @@ namespace ERP_Portfolio.User
     
     public partial class RegistForm : Form
     {
-        private Form1 _loginForm;
+        private UserManagerForm _userManagerForm;
         public RegistForm()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace ERP_Portfolio.User
 
         private void RegistForm_Load(object sender, EventArgs e)
         {
-            _loginForm = (Form1)Owner;
+            _userManagerForm = (UserManagerForm)Owner;
 
             partComboBox.Items.Clear();
 
@@ -77,7 +77,8 @@ namespace ERP_Portfolio.User
             string phone2 = phoneTextbox2.Text;
             string address1 = addressTextbox1.Text;
             string address2 = addressTextbox2.Text;
-
+            DateTime date = DateTime.Now;
+            
             if (userId == "" || userPwd == "" || userName == "")
             {
                 MessageBox.Show("아이디, 비밀번호, 이름은 필수입력 사항입니다", "회원가입 실패");
@@ -86,7 +87,7 @@ namespace ERP_Portfolio.User
 
             string tableName = "UserInfo";
             SqlManager.Instance.SetBuilder(tableName);
-            int value = SqlManager.Instance.InsertCommand(tableName, userId, userPwd, userName, partIndex, authorityIndex, rankIndex, email, phone1, phone2, address1, address2);
+            int value = SqlManager.Instance.InsertCommand(tableName, userId, userPwd, userName, partIndex, authorityIndex, rankIndex, email, phone1, phone2, address1, address2, date);
             if(value == 1)
             {
                 if(MessageBox.Show("회원가입 성공", "회원가입") == DialogResult.OK)

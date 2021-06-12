@@ -26,13 +26,7 @@ namespace ERP_Portfolio
         // 회원가입 버튼
         private void RegistBtn_Click(object sender, EventArgs e)
         {
-            RegistForm registForm = new RegistForm();
-            registForm.Owner = this;
-            if(registForm.ShowDialog(this) == DialogResult.OK)
-            {
-                Visible = true;
-                registForm.Dispose();
-            }
+            
         }
 
         private void Login_Click(object sender, EventArgs e)
@@ -46,7 +40,7 @@ namespace ERP_Portfolio
 
             if (row.Length > 0)
             {
-                Form2 mainForm = new Form2();
+                MainForm mainForm = new MainForm();
                 mainForm.Owner = this;
                 mainForm.Show(this);
             }

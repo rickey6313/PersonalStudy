@@ -14,10 +14,11 @@ E:\WorkSpace\PersonalStudy\ERP_Portfolio\bin\Debug\ERP_Portfolio.exe
 E:\WorkSpace\PersonalStudy\ERP_Portfolio\bin\Debug\ERP_Portfolio.pdb
 E:\WorkSpace\PersonalStudy\ERP_Portfolio\obj\Debug\ERP_Portfolio.csprojAssemblyReference.cache
 E:\WorkSpace\PersonalStudy\ERP_Portfolio\obj\Debug\ERP_Portfolio.Form1.resources
-E:\WorkSpace\PersonalStudy\ERP_Portfolio\obj\Debug\ERP_Portfolio.Form2.resources
 E:\WorkSpace\PersonalStudy\ERP_Portfolio\obj\Debug\ERP_Portfolio.Properties.Resources.resources
 E:\WorkSpace\PersonalStudy\ERP_Portfolio\obj\Debug\ERP_Portfolio.csproj.GenerateResource.cache
 E:\WorkSpace\PersonalStudy\ERP_Portfolio\obj\Debug\ERP_Portfolio.csproj.CoreCompileInputs.cache
 E:\WorkSpace\PersonalStudy\ERP_Portfolio\obj\Debug\ERP_Portfolio.exe
 E:\WorkSpace\PersonalStudy\ERP_Portfolio\obj\Debug\ERP_Portfolio.pdb
 E:\WorkSpace\PersonalStudy\ERP_Portfolio\obj\Debug\ERP_Portfolio.User.RegistForm.resources
+E:\WorkSpace\PersonalStudy\ERP_Portfolio\obj\Debug\ERP_Portfolio.MainForm.resources
+E:\WorkSpace\PersonalStudy\ERP_Portfolio\obj\Debug\ERP_Portfolio.User.UserManagerForm.resources
