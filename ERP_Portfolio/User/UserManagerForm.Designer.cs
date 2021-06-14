@@ -32,16 +32,15 @@ namespace ERP_Portfolio.User
             this.userGridView = new System.Windows.Forms.DataGridView();
             this.AddUserBtn = new System.Windows.Forms.Button();
             this.RemoveUserBtn = new System.Windows.Forms.Button();
-            this.UpdateUserBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.idTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SelectUserBtn = new System.Windows.Forms.Button();
+            this.rankComboBox = new System.Windows.Forms.ComboBox();
+            this.partComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.userGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,21 +75,12 @@ namespace ERP_Portfolio.User
             this.RemoveUserBtn.UseVisualStyleBackColor = true;
             this.RemoveUserBtn.Click += new System.EventHandler(this.RemoveUserBtn_Click);
             // 
-            // UpdateUserBtn
+            // idTextBox
             // 
-            this.UpdateUserBtn.Location = new System.Drawing.Point(333, 65);
-            this.UpdateUserBtn.Name = "UpdateUserBtn";
-            this.UpdateUserBtn.Size = new System.Drawing.Size(135, 49);
-            this.UpdateUserBtn.TabIndex = 1;
-            this.UpdateUserBtn.Text = "사용자 수정";
-            this.UpdateUserBtn.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(34, 144);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 2;
+            this.idTextBox.Location = new System.Drawing.Point(34, 144);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.Size = new System.Drawing.Size(100, 21);
+            this.idTextBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -101,12 +91,12 @@ namespace ERP_Portfolio.User
             this.label1.TabIndex = 3;
             this.label1.Text = "ID";
             // 
-            // textBox2
+            // nameTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(184, 144);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 2;
+            this.nameTextBox.Location = new System.Drawing.Point(184, 144);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(100, 21);
+            this.nameTextBox.TabIndex = 2;
             // 
             // label2
             // 
@@ -125,20 +115,6 @@ namespace ERP_Portfolio.User
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 3;
             this.label3.Text = "직급";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(338, 144);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 2;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(488, 144);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 21);
-            this.textBox4.TabIndex = 2;
             // 
             // label4
             // 
@@ -159,21 +135,36 @@ namespace ERP_Portfolio.User
             this.SelectUserBtn.UseVisualStyleBackColor = true;
             this.SelectUserBtn.Click += new System.EventHandler(this.SelectUserBtn_Click);
             // 
+            // rankComboBox
+            // 
+            this.rankComboBox.FormattingEnabled = true;
+            this.rankComboBox.Location = new System.Drawing.Point(338, 144);
+            this.rankComboBox.Name = "rankComboBox";
+            this.rankComboBox.Size = new System.Drawing.Size(100, 20);
+            this.rankComboBox.TabIndex = 4;
+            // 
+            // partComboBox
+            // 
+            this.partComboBox.FormattingEnabled = true;
+            this.partComboBox.Location = new System.Drawing.Point(488, 144);
+            this.partComboBox.Name = "partComboBox";
+            this.partComboBox.Size = new System.Drawing.Size(100, 20);
+            this.partComboBox.TabIndex = 4;
+            // 
             // UserManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.partComboBox);
+            this.Controls.Add(this.rankComboBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.SelectUserBtn);
-            this.Controls.Add(this.UpdateUserBtn);
             this.Controls.Add(this.RemoveUserBtn);
             this.Controls.Add(this.AddUserBtn);
             this.Controls.Add(this.userGridView);
@@ -191,15 +182,14 @@ namespace ERP_Portfolio.User
         private System.Windows.Forms.DataGridView userGridView;
         private System.Windows.Forms.Button AddUserBtn;
         private System.Windows.Forms.Button RemoveUserBtn;
-        private System.Windows.Forms.Button UpdateUserBtn;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button SelectUserBtn;
+        private System.Windows.Forms.ComboBox rankComboBox;
+        private System.Windows.Forms.ComboBox partComboBox;
     }
 }

@@ -22,6 +22,7 @@ namespace ERP_Portfolio
         }
 
         private SqlConnection _conn;
+        private SqlCommand _command;
         private SqlDataAdapter _adapter;
         private SqlCommandBuilder _builder;
         private DataSet _dataSet;
@@ -30,7 +31,7 @@ namespace ERP_Portfolio
         {
             
             string connStr = Properties.Resources.ERPDBConnectionString;            
-            _conn = new SqlConnection();
+            _conn = new SqlConnection();            
             _conn.ConnectionString = connStr;
             string userInfoSelect = "select * from UserInfo";
             _dataSet = new DataSet();
@@ -72,6 +73,49 @@ namespace ERP_Portfolio
                     _adapter.Fill(_dataSet, tableName);
                     break;
             }            
+        }
+
+        public DataTable ExecSelectUserinfo(string id, string name, int part, int rank)
+        {
+            _conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT_USERINFO", _conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter
+                {
+                    ParameterName = "@P_id",
+                    Direction = ParameterDirection.Input,
+                    Value = id
+                },
+                new SqlParameter
+                {
+                    ParameterName = "@P_name",
+                    Direction = ParameterDirection.Input,
+                    Value = name
+                },
+                new SqlParameter
+                {
+                    ParameterName = "@P_part",
+                    Direction = ParameterDirection.Input,
+                    Value = part
+                },
+                new SqlParameter
+                {
+                    ParameterName = "@P_rank",
+                    Direction = ParameterDirection.Input,
+                    Value = rank
+                }
+            };
+
+            cmd.Parameters.AddRange(parameters);
+
+            DataTable table = new DataTable();
+            _adapter = new SqlDataAdapter(cmd);
+            _adapter.Fill(table);
+            _conn.Close();   
+            return table;
         }
 
         public int InsertCommand(string tableName, string id, string pwd, string name, int part, int auth, int rank, string email, string phone1, string phone2, string addr1, string addr2, DateTime date)

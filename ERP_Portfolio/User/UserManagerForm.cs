@@ -28,6 +28,25 @@ namespace ERP_Portfolio.User
         private void LoadData()
         {
             SelectUserInfo();
+            SetPartInfo();
+            SetRankInfo();
+        }
+        private void SetPartInfo()
+        {
+            string tableName = "PartInfo";
+            SqlManager.Instance.SelectTable(tableName);
+            DataTable items = SqlManager.Instance.GetDataTable(tableName);
+            foreach (DataRow row in items.Rows)
+                partComboBox.Items.Add(row["partName"].ToString());
+        }
+        
+        private void SetRankInfo()
+        {
+            string tableName = "RankInfo";
+            SqlManager.Instance.SelectTable(tableName);
+            DataTable items = SqlManager.Instance.GetDataTable(tableName);
+            foreach (DataRow row in items.Rows)
+                rankComboBox.Items.Add(row["rankName"].ToString());
         }
 
         private void AddUserBtn_Click(object sender, EventArgs e)
@@ -44,7 +63,13 @@ namespace ERP_Portfolio.User
 
         private void SelectUserBtn_Click(object sender, EventArgs e)
         {
-            SelectUserInfo();
+            string id = idTextBox.Text;
+            string name = nameTextBox.Text;
+            int part = partComboBox.SelectedIndex == -1 ? -1 : partComboBox.SelectedIndex + 1;
+            int rank = rankComboBox.SelectedIndex == -1 ? -1 : rankComboBox.SelectedIndex + 1;            
+            DataTable table = SqlManager.Instance.ExecSelectUserinfo(id, name, part, rank);
+            userGridView.Columns["uniqueId"].Visible = false;
+            userGridView.DataSource = table;
         }
 
         // 유저정보 조회
@@ -61,8 +86,9 @@ namespace ERP_Portfolio.User
                 "address1 as \"주소1\", address2 as \"주소2\", " +
                 "A.RegisterDate as \"등록일\" " + 
                 $"from {tableName} A Inner join PartInfo P On A.part = P.partId " +
-                $"Inner join AuthorityInfo auth On A.authorityGrade = auth.authorityId " +
-                $"Inner join RankInfo On A.rankGrade = RankInfo.rankId";
+                "Inner join AuthorityInfo auth On A.authorityGrade = auth.authorityId " +
+                "Inner join RankInfo On A.rankGrade = RankInfo.rankId";
+
             SqlManager.Instance.SelectTable(tableName, select);
             userGridView.DataSource = SqlManager.Instance.GetDataTable(tableName);
             userGridView.Columns[0].Visible = false;
