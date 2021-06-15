@@ -19,8 +19,8 @@ namespace ERP_Portfolio
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
-            Application.Run(new UserManagerForm());
+            Application.Run(new MainForm());
+            //Application.Run(new UserManagerForm());
         }
     }
 }

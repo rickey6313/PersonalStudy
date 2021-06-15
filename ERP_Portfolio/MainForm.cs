@@ -23,12 +23,13 @@ namespace ERP_Portfolio
         private void Form2_Load(object sender, EventArgs e)
         {
             _loginForm = (Form1)Owner;
-            _loginForm.Visible = false;
+            if(_loginForm != null)
+                _loginForm.Visible = false;
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            _loginForm.Dispose();
+            _loginForm?.Dispose();
         }
 
         private void 사용자등록ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -46,7 +47,12 @@ namespace ERP_Portfolio
 
         private void 직급관리ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            RankManager rankManager = new RankManager();
+            //rankManager.Owner = this;
+            if(rankManager.ShowDialog(this) == DialogResult.OK)
+            {
+                rankManager.Dispose();
+            }
         }
 
         private void 제품등록ToolStripMenuItem_Click(object sender, EventArgs e)

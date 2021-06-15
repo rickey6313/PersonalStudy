@@ -68,8 +68,8 @@ namespace ERP_Portfolio.User
             int part = partComboBox.SelectedIndex == -1 ? -1 : partComboBox.SelectedIndex + 1;
             int rank = rankComboBox.SelectedIndex == -1 ? -1 : rankComboBox.SelectedIndex + 1;            
             DataTable table = SqlManager.Instance.ExecSelectUserinfo(id, name, part, rank);
-            userGridView.Columns["uniqueId"].Visible = false;
             userGridView.DataSource = table;
+            userGridView.Columns["uniqueId"].Visible = false;
         }
 
         // 유저정보 조회

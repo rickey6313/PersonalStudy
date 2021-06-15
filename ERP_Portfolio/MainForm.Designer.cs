@@ -31,11 +31,11 @@ namespace ERP_Portfolio
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.인사관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.주문ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.구매ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.사용자등록ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.권한관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.직급관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.생산ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.구매ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.제품ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.제품등록ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -46,7 +46,7 @@ namespace ERP_Portfolio
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.인사관리ToolStripMenuItem,
-            this.주문ToolStripMenuItem,
+            this.생산ToolStripMenuItem,
             this.구매ToolStripMenuItem,
             this.제품ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -64,18 +64,6 @@ namespace ERP_Portfolio
             this.인사관리ToolStripMenuItem.Name = "인사관리ToolStripMenuItem";
             this.인사관리ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.인사관리ToolStripMenuItem.Text = "인사";
-            // 
-            // 주문ToolStripMenuItem
-            // 
-            this.주문ToolStripMenuItem.Name = "주문ToolStripMenuItem";
-            this.주문ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.주문ToolStripMenuItem.Text = "생산";
-            // 
-            // 구매ToolStripMenuItem
-            // 
-            this.구매ToolStripMenuItem.Name = "구매ToolStripMenuItem";
-            this.구매ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.구매ToolStripMenuItem.Text = "구매";
             // 
             // 사용자등록ToolStripMenuItem
             // 
@@ -97,6 +85,18 @@ namespace ERP_Portfolio
             this.직급관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.직급관리ToolStripMenuItem.Text = "직급 관리";
             this.직급관리ToolStripMenuItem.Click += new System.EventHandler(this.직급관리ToolStripMenuItem_Click);
+            // 
+            // 생산ToolStripMenuItem
+            // 
+            this.생산ToolStripMenuItem.Name = "생산ToolStripMenuItem";
+            this.생산ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.생산ToolStripMenuItem.Text = "생산";
+            // 
+            // 구매ToolStripMenuItem
+            // 
+            this.구매ToolStripMenuItem.Name = "구매ToolStripMenuItem";
+            this.구매ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.구매ToolStripMenuItem.Text = "구매";
             // 
             // 제품ToolStripMenuItem
             // 
@@ -135,7 +135,7 @@ namespace ERP_Portfolio
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 인사관리ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 주문ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 생산ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 사용자등록ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 권한관리ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 직급관리ToolStripMenuItem;

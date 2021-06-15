@@ -61,6 +61,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\RankManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\RankManager.Designer.cs">
+      <DependentUpon>RankManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="User\RegistForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="User\RankManager.resx">
+      <DependentUpon>RankManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User\RegistForm.resx">
       <DependentUpon>RegistForm.cs</DependentUpon>
     </EmbeddedResource>

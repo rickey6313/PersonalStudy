@@ -62,11 +62,19 @@ namespace ERP_Portfolio
         }
 
         public void SetBuilder(string tableName)
-        {            
+        {
+            string select = "";
             switch (tableName)
             {
                 case "UserInfo":
-                    string select = $"select * from {tableName}";
+                    select = $"select * from {tableName}";
+                    _adapter = new SqlDataAdapter(select, _conn);
+                    _dataSet = new DataSet();
+                    _builder = new SqlCommandBuilder(_adapter);
+                    _adapter.Fill(_dataSet, tableName);
+                    break;
+                case "RankInfo":
+                    select = $"select * from {tableName}";
                     _adapter = new SqlDataAdapter(select, _conn);
                     _dataSet = new DataSet();
                     _builder = new SqlCommandBuilder(_adapter);
@@ -111,10 +119,83 @@ namespace ERP_Portfolio
 
             cmd.Parameters.AddRange(parameters);
 
+            return ReturnDataTable(cmd);
+        }
+
+        public DataTable ExecuteSelectRankInfo(int id, string name = null)
+        {
+            _conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT_RANKINFO", _conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter
+                {
+                    ParameterName = "@P_id",
+                    Direction = ParameterDirection.Input,
+                    Value = id
+                },
+                new SqlParameter
+                {
+                    ParameterName = "@P_name",
+                    Direction = ParameterDirection.Input,
+                    Value = name
+                }
+            };
+
+            cmd.Parameters.AddRange(parameters);
+
+            return ReturnDataTable(cmd);
+        }
+
+        public int ExecuteInsertRankInfo(int id, string name)
+        {
+            _conn.Open();
+            SqlCommand cmd = new SqlCommand("INSERT_Rank", _conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter[] param = new SqlParameter[]
+            {
+                new SqlParameter
+                {
+                    ParameterName = "@P_id",
+                    Direction = ParameterDirection.Input,
+                    Value = id
+                },
+                new SqlParameter
+                {
+                    ParameterName = "@P_name",
+                    Direction = ParameterDirection.Input,
+                    Value = name
+                }
+            };
+
+            cmd.Parameters.AddRange(param);
+
+            try
+            {
+                int success = cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                _conn.Close();
+                return success;
+            }
+            catch(Exception e)
+            {
+                cmd.Dispose();
+                _conn.Close();
+                return -1;
+            }
+            
+        }
+
+        private DataTable ReturnDataTable(SqlCommand cmd)
+        {
             DataTable table = new DataTable();
             _adapter = new SqlDataAdapter(cmd);
             _adapter.Fill(table);
-            _conn.Close();   
+            cmd.Dispose();
+            _conn.Close();
             return table;
         }
 
@@ -146,8 +227,7 @@ namespace ERP_Portfolio
             DataRow[] find = _dataSet.Tables[tableName].Select(filter);
             find[0].Delete();
             _adapter.Update(_dataSet, tableName);
-            _dataSet.Clear();
-            //_adapter.Fill(_dataSet, tableName);
+            _dataSet.Clear();            
         }
 
         public DataTable GetDataTable(string tableName)

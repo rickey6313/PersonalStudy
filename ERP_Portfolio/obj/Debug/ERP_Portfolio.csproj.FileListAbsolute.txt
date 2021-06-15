@@ -22,3 +22,4 @@ E:\WorkSpace\PersonalStudy\ERP_Portfolio\obj\Debug\ERP_Portfolio.pdb
 E:\WorkSpace\PersonalStudy\ERP_Portfolio\obj\Debug\ERP_Portfolio.User.RegistForm.resources
 E:\WorkSpace\PersonalStudy\ERP_Portfolio\obj\Debug\ERP_Portfolio.MainForm.resources
 E:\WorkSpace\PersonalStudy\ERP_Portfolio\obj\Debug\ERP_Portfolio.User.UserManagerForm.resources
+E:\WorkSpace\PersonalStudy\ERP_Portfolio\obj\Debug\ERP_Portfolio.User.RankManager.resources
